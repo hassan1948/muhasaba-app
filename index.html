@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>محاسبة يومية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,7 +285,7 @@
 
   .extras-row {
     display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
-    margin-top: 12px; padding-top: 12px;
+    margin-top: min(12px, 2vh); padding-top: 12px;
     border-top: 1px dashed var(--border);
   }
 
@@ -533,8 +533,10 @@
     align-items: center;
     max-width: 430px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
+    -webkit-overflow-scrolling: touch;
   }
 
   .ws-bg {
@@ -570,7 +572,7 @@
 
   /* Title area */
   .ws-top {
-    padding-top: 52px;
+    padding-top: min(52px, 6vh);
     text-align: center;
     width: 100%;
     animation: wsFadeDown 0.9s cubic-bezier(0.16,1,0.3,1) both;
@@ -593,7 +595,7 @@
   .ws-verse {
     padding: 0 28px;
     text-align: center;
-    margin-top: 12px;
+    margin-top: min(12px, 2vh);
     animation: wsFadeUp 0.9s 0.15s cubic-bezier(0.16,1,0.3,1) both;
   }
 
@@ -627,7 +629,7 @@
     gap: 12px;
     padding: 0 20px;
     width: 100%;
-    flex: 1;
+    flex: 0 0 auto;
     align-items: flex-end;
     animation: wsFadeUp 0.9s 0.25s cubic-bezier(0.16,1,0.3,1) both;
     margin-top: 10px;
@@ -656,7 +658,7 @@
 
   .ws-person-img {
     width: 100%;
-    max-height: 200px;
+    max-height: min(200px, 22vh);
     object-fit: contain;
     object-position: top;
   }
